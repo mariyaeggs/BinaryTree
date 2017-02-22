@@ -143,6 +143,14 @@ void BST::preOrderBin(ostream &out, BinNode *locptr) const {
       preOrderBin(out, locptr->right); // Traverse the right subtree
    }
 }
+/**
+ * countNode method function to count
+ * nodes inserted into the binary tree.
+ *
+ * @param args count quantity of nodes
+ * inserted
+ * @return int nodes in the binary tree
+*/
 int BST::countNode() {
    return nodeCountBin(myRoot);
 }
