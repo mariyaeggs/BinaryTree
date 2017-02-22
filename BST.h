@@ -1,8 +1,20 @@
 #include <iostream>
 using namespace std;
-
-#ifndef PROGRAM7_EGGENSPERGER_MARIYA_BST_H
-#define PROGRAM7_EGGENSPERGER_MARIYA_BST_H
+/**
+ * Title: Program 7 Submission : Binary Search Tree
+ * Course: CST 370 Design & Analysis of Algorithms
+ * School: CSU, Monterey Bay
+ * Professor: Dr. Feiling Jia
+ * Source: CLion 2016.3.2
+ *
+ * This is a header file that defines
+ * the data for a binary search tree
+ * operations program in C++ Programming.
+ *
+ * @author Mariya Eggensperger
+*/
+#ifndef BINARY_SEARCH_TREE
+#define BINARY_SEARCH_TREE
 
 class BST
 {
@@ -12,6 +24,9 @@ public:
     bool empty() const;
     bool search(const int & item) const;
     void insert(const int & item);
+    void inOrder(ostream & out) const;
+    void preOrder(ostream & out) const;
+    int countNode();
 
 private:
     /***** Node class *****/
@@ -37,7 +52,11 @@ private:
 
     /***** Data Members *****/
     BinNode * myRoot;
+    bool searchRecursive(BinNode * locptr, const int & item) const;
+    void inOrderBin(ostream & out, BinNode * locptr) const;
+    void preOrderBin(ostream & out, BinNode * locptr) const;
+    int nodeCountBin(BinNode * locptr);
 
 }; // end of class declaration
 
-#endif //PROGRAM7_EGGENSPERGER_MARIYA_BST_H
+#endif
